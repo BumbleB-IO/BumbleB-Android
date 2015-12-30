@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 
 import com.android.volley.Response;
+import com.android.volley.toolbox.ImageLoader;
 
 import java.util.HashMap;
 
@@ -41,6 +42,10 @@ public class BumbleB {
 
         // Access the RequestQueue through your singleton class.
         BumbleBVolleySingleton.getInstance(context).addToRequestQueue(request);
+    }
+
+    public static ImageLoader getImageLoader(Context context) {
+        return BumbleBVolleySingleton.getInstance(context).getImageLoader();
     }
 
     private static Uri.Builder createBaseRequestUrl(){
